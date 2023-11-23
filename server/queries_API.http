@@ -1,0 +1,92 @@
+GET http://localhost:3001/api/pages/front HTTP/1.1
+###
+GET http://localhost:3001/api/pages/back HTTP/1.1
+###
+POST http://localhost:3001/api/sessions HTTP/1.1
+content-type: application/json
+
+{
+    "username": "admin@email.com",
+    "password": "secure_password"
+}
+
+###
+
+GET http://localhost:3001/api/sessions/current HTTP/1.1
+content-type: application/json
+###
+
+DELETE http://localhost:3001/api/sessions/current HTTP/1.1
+content-type: application/json
+###
+
+PUT http://localhost:3001/api/pages/1 HTTP/1.1
+content-type: application/json
+
+{
+    "id": 1,
+    "title": "Pagina_1",
+    "author": "user1@email.com",
+    "creazione": "2023-06-10",
+    "pubblicazione": "2023-06-10",
+    "blocks": [
+      {
+        "id": 1,
+        "type": "header",
+        "value": "Titolo di test modificato",
+        "position": 1
+      },
+      {
+        "id": 3,
+        "type": "paragraph",
+        "value": "Paragrafo di prova",
+        "position": 2
+      }
+    ]
+}
+
+###
+
+DELETE http://localhost:3001/api/pages/11 HTTP/1.1
+content-type: application/json
+
+###
+
+POST http://localhost:3001/api/pages HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Pagina_2",
+    "author": 1,
+    "creazione": "2023-06-10",
+    "pubblicazione": "2023-10-10",
+    "blocks": [
+      {
+        "type": "header",
+        "value": "Articolo diu giornalismo",
+        "position": 2
+      },
+      {
+        "type": "paragraph",
+        "value": "Il giornalismo nel 2023",
+        "position": 1
+      }
+    ]
+}
+
+###
+GET http://localhost:3001/api/titles HTTP/1.1
+
+###
+PUT http://localhost:3001/api/titles HTTP/1.1
+content-type: application/json
+
+{"title": "CMSmall Dev"}
+###
+GET http://localhost:3001/static/image5.jpg
+###
+GET http://localhost:3001/api/images
+###
+GET http://localhost:3001/api/pages/1
+###
+
